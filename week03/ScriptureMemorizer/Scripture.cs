@@ -1,9 +1,17 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
-public class Scripture()
+public class Scripture
 {
-    private string _refrence;
+    private Reference _reference;
     private List<Word> _verses; 
+
+    public Scripture(Reference reference, string text)
+    {
+        _reference = reference;
+        _verses = text.Split(' ').Select(word => new Word(word)).ToList();
+    }
 
     public void HideRandomWord()
     {
@@ -26,7 +34,7 @@ public class Scripture()
     {
         foreach(Word word in _verses)
         {
-            if(!word.isHidden(isHidden))
+            if(!word.isHidden())
             {
                 return false;
             }

@@ -9,7 +9,7 @@ public class Word
     public Word(string text)
     {
         _text = text;
-        // _isHidden = false;
+        _isHidden = false;
     }
     public void Hide()
     {
@@ -22,9 +22,9 @@ public class Word
         _isHidden = false;
     }
 
-    public bool isHidden(bool isHidden)
+    public bool isHidden()
     {
-        return isHidden;
+        return _isHidden;
     }
 
     public string GetDisplayText()
